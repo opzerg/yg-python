@@ -14,13 +14,11 @@ services:
     networks:
       - api-service
     entrypoint:
-      - "uvicorn"
-      - "main:app"
-      - "--host"
-      - ${APP_HOST}
-      - "--port"
-      - ${APP_PORT}
-      - "--reload"
+      - "python"
+      - "main.py"
+      - "--env"
+      - "dev"
+      - "--debug"
 networks:
   api-service:
     driver: 'bridge'
